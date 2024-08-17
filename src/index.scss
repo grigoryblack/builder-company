@@ -1,0 +1,83 @@
+/* index.scss */
+
+/* Сброс основных стилей */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Удаление стилей списка */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Удаление подчеркивания ссылок */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Сброс стилей для изображений */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Сброс стилей для таблиц */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Базовые стили для body */
+body {
+}
+
+/* Сброс стилей для кнопок */
+button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font: inherit;
+}
+
+/* Сброс стилей для форм */
+input,
+textarea {
+  font: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+/* Сброс стилей заголовков */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: normal;
+}
+
+/* Сброс стилей для полей формы */
+input,
+button,
+textarea,
+select {
+  outline: none;
+  border: none;
+  background: none;
+}
+
+/* Сброс стилей для всех элементов */
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
