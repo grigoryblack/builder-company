@@ -1,0 +1,355 @@
+@import "../../../assets/styles/colors";
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  height: 100vh;
+  width: 100%; /* Ширина экрана (viewport width) */
+  overflow: hidden; /* Препятствует вылезанию содержимого за пределы */
+
+  .header__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-color: $decor-color;
+    z-index: -1;
+  }
+
+  .header-inner{
+    border-right:1px solid $decor-color ;
+    border-left:1px solid $decor-color ;
+    max-width: 1500px;
+    width: 100%;
+    height: 100%;
+
+    .header__arrow-down{
+      position: absolute;
+      bottom:5svw;
+      left: 50%;
+      transform: translate(-50%, 0);
+      a{
+        background-color: transparent;
+        border: none;
+        font-size: 3svw;
+        color: rgba($decor-color,1);
+      }
+    }
+
+    .header-content{
+      display: grid;
+      grid-template-columns: repeat(2, 49%);
+      column-gap: 2%;
+      margin:12svw 0;
+
+
+      .header-content__title{
+        margin-left: 2svw;
+
+        h1{
+          font-weight: 900;
+          color: $main-font-color;
+          font-size: 5svw;
+        }
+
+        h2{
+          margin-top: 2svw;
+          font-weight: 100;
+          font-size: 2svw;
+          color: $main-font-color;
+        }
+      }
+
+      .header-content__button{
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+
+        .calculator_button {
+          border: 5px solid $accent-color;
+          background-color: rgba($secondary-color, 0.4);
+          font-size: 1.8svw;
+          padding: 1.5svw;
+          border-radius: 10px;
+          color: $main-color;
+
+          // Определяем переходы для всех изменяемых свойств
+          transition: border 0.7s ease, background-color 0.7s ease, color 0.7s ease;
+
+          &:hover {
+            border: 5px solid $secondary-color;
+            background-color: rgba($accent-color, 0.8);
+            color: $main-color;
+          }
+        }
+      }
+    }
+
+    .top-line {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .logo {
+        font-size: 2svw;
+        font-weight: bold;
+        color: $main-color;
+        padding: 0 0.8svw;
+      }
+
+      .info-inner{
+        display: flex;
+        flex-direction: row;
+        column-gap: 60px;
+        border-bottom:1px solid $decor-color;
+        padding: 1svw 0.8svw;
+
+        .contacts,
+        .location {
+          display: flex;
+          flex-direction: column;
+          text-align: left;
+          row-gap: 0.5svw;
+          font-size: 1.2svw;
+          cursor: default;
+          color: $main-color;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1500px) {
+  .header{
+   .header-inner{
+     padding: 0 10px;
+     transition: 0.3s all;
+
+     .header__arrow-down{
+       a{
+         font-size: 4svw;
+       }
+     }
+
+     .header-content{
+       display: grid;
+       grid-template-columns: repeat(1, 100%);
+       row-gap: 6svw;
+       margin:10svw 0;
+
+
+       .header-content__title{
+         margin-left: 2svw;
+         text-align: center;
+
+         h1{
+           font-weight: 900;
+           font-size: 6svw;
+         }
+
+         h2{
+           margin-top: 2svw;
+           font-weight: 100;
+           font-size: 3svw;
+         }
+       }
+
+       .header-content__button{
+         display: flex;
+         align-items: flex-end;
+         justify-content: center;
+
+         .calculator_button {
+           font-size: 2.5svw;
+           padding: 1.5svw;
+           border-radius: 10px;
+           color: $main-color;
+         }
+       }
+     }
+   }
+  }
+}
+
+@media (max-width: 1100px){
+  .header {
+
+    .header-inner{
+      margin-top: 3svw;
+
+      .header__arrow-down{
+        a{
+          font-size: 6svh;
+        }
+      }
+
+      .header-content{
+        row-gap: 10svh;
+        margin:20svh 0;
+
+
+        .header-content__title{
+          margin-left: 2svw;
+          text-align: center;
+
+          h1{
+            font-weight: 900;
+            font-size: 6svh;
+          }
+
+          h2{
+            margin-top: 2svw;
+            font-weight: 100;
+            font-size: 3svh;
+          }
+        }
+
+        .header-content__button{
+          display: flex;
+          align-items: flex-end;
+          justify-content: center;
+
+          .calculator_button {
+            font-size: 2.5svh;
+            padding: 1.5svh;
+            border-radius: 10px;
+            color: $main-color;
+          }
+        }
+      }
+
+      .top-line {
+        margin-bottom: 1svw;
+
+        .logo {
+          font-size: 3svw;
+          transition: 0.3s all;
+          font-weight: bold;
+          color: $main-color;
+          padding: 0 0.8svw;
+        }
+
+        .info-inner{
+          display: flex;
+          flex-direction: row;
+          column-gap: 30px;
+          border-bottom:1px solid $decor-color;
+          padding: 1svw 0.8svw;
+
+          .contacts,
+          .location {
+            font-size: 2.5svw;
+            row-gap: 1.5svw;
+            transition: 0.3s all;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 750px){
+  .header {
+
+    .header-inner{
+      margin-top: 3svw;
+
+      .top-line {
+        margin-bottom: 2svw;
+
+        .logo {
+          font-size: 4svw;
+          transition: 0.3s all;
+          font-weight: bold;
+          color: $main-color;
+          padding: 0 0.8svw;
+        }
+
+        .info-inner{
+          display: flex;
+          flex-direction: row;
+          column-gap: 30px;
+          transition: 0.3s all;
+          border-bottom:1px solid $decor-color;
+          padding: 1svw 0.8svw;
+
+          .contacts,
+          .location {
+            font-size: 2svw;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 750px){
+  .header {
+
+    .header-inner{
+      margin-top: 3svw;
+
+      .top-line {
+
+        .logo {
+          font-size: 4svw;
+          transition: 0.3s all;
+          font-weight: bold;
+          color: $main-color;
+          padding: 0 0.8svw;
+        }
+
+        .info-inner{
+          display: flex;
+          flex-direction: row;
+          column-gap: 0;
+          transition: 0.3s all;
+          border:none;
+          padding: 1svw 0.8svw;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 600px){
+  .header {
+
+    .header-inner{
+      margin-top: 3svw;
+
+      .top-line {
+
+        .logo {
+          font-size: 7svw;
+          transition: 0.3s all;
+          font-weight: bold;
+          color: $main-color;
+          padding:2svw;
+        }
+
+        .info-inner{
+          display: flex;
+          flex-direction: row;
+          column-gap: 0;
+          transition: 0.3s all;
+          border:none;
+          padding: 1svw 0.8svw;
+
+          .location {
+            display: none;
+          }
+          .contacts{
+            font-size: 8svw;
+            row-gap: 0;
+            margin-right: 17svw;
+          }
+        }
+      }
+    }
+  }
+}
