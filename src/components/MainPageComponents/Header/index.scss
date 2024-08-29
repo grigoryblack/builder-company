@@ -6,8 +6,8 @@
   align-items: center;
   position: relative;
   height: 100vh;
-  width: 100%; /* Ширина экрана (viewport width) */
-  overflow: hidden; /* Препятствует вылезанию содержимого за пределы */
+  width: 100%;
+  overflow: hidden;
 
   .header__background {
     position: absolute;
@@ -321,41 +321,6 @@
             font-size: 2.5svw;
             row-gap: 1.5svw;
             transition: 0.3s all;
-          }
-        }
-      }
-    }
-  }
-}
-
-@media (max-width: 750px){
-  .header {
-
-    .header-inner{
-      margin-top: 3svw;
-
-      .top-line {
-        margin-bottom: 2svw;
-
-        .logo {
-          font-size: 4svw;
-          transition: 0.3s all;
-          font-weight: bold;
-          color: $main-color;
-          padding: 0 0.8svw;
-        }
-
-        .info-inner{
-          display: flex;
-          flex-direction: row;
-          column-gap: 30px;
-          transition: 0.3s all;
-          border-bottom:1px solid $decor-color;
-          padding: 1svw 0.8svw;
-
-          .contacts,
-          .location {
-            font-size: 2svw;
           }
         }
       }

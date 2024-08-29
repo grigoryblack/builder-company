@@ -1,0 +1,301 @@
+@import "../../../assets/styles/colors";
+
+.about-us__wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+
+  .bg_decor{
+    position: absolute;
+    bottom: 10%;
+    right: 8%;
+    width: 30%;
+    z-index: -1;
+  }
+
+  .about-us__wrapper-container{
+    max-width: 1500px;
+    padding: 0 1svw;
+    width: 100%;
+    height: 100%;
+    border-left: 1px solid $decor-color;
+    border-right: 1px solid $decor-color;
+
+    h2{
+      margin-top: 7svh;
+      font-weight: 600;
+      font-size: 3svw;
+      margin-bottom: 3svw;
+    }
+
+    .card-container{
+      display: grid;
+      grid-template-columns: repeat(3, 32%);
+      column-gap: 2%;
+      row-gap: 3svh;
+
+      .card-container__item{
+        display: flex;
+        align-items: flex-start;
+        width: 100%;
+        background-color: $secondary-font-color;
+        padding: 1svw 0;
+        border-radius: 10px;
+        max-height: 70svh;
+        height: 100%;
+        box-shadow: 0px 8px 24px 0px rgba(129, 135, 189, 0.15);
+
+        .card-container__item-inner{
+          border-top:2px solid $accent-color;
+          border-bottom:2px solid $accent-color;
+          background-color: $main-color;
+          padding: 2svh 1svw;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          row-gap: 2svw;
+
+          .inner-number{
+            font-weight: 600;
+            font-size: 6svh;
+            color: $secondary-font-color;
+            position: relative;
+
+            &:before{
+              position: absolute;
+              width: 100%;
+              height: 2px;
+              background-color: $secondary-font-color;
+              content: '';
+              bottom: 0;
+              right: -2px;
+            }
+          }
+
+          p{
+            font-weight: 500;
+            font-size: 1svw;
+            color:$secondary-font-color;
+          }
+        }
+      }
+    }
+    .about__arrow-down{
+      position: absolute;
+      bottom:5svw;
+      left: 50%;
+      transform: translate(-50%, 0);
+      a{
+        background-color: transparent;
+        border: none;
+        font-size: 3svw;
+        color: rgba($decor-color,1);
+      }
+    }
+  }
+}
+
+@media (max-width: 1500px) {
+  .about-us__wrapper{
+    .bg_decor{
+      display: none;
+    }
+
+    .about-us__wrapper-container{
+      padding: 0 2svw;
+      transition: 0.3s all;
+
+      h2{
+        margin-top: 5svh;
+        font-weight: 600;
+        font-size: 4svw;
+        margin-bottom: 3svw;
+      }
+
+      .card-container{
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        gap: 3svw;
+
+        .card-container__item{
+          padding: 1svw 0;
+
+          .card-container__item-inner{
+            padding: 2svh 1svw;
+            row-gap: 2svw;
+
+            .inner-number{
+              font-weight: 600;
+              font-size: 8svh;
+              color: $secondary-font-color
+            }
+
+            p{
+              font-size: 1.5svw;
+            }
+          }
+        }
+      }
+      .about__arrow-down{
+        a{
+          font-size: 4svw;
+        }
+      }
+    }
+  }
+}
+
+
+@media (max-width: 1100px) {
+  .about-us__wrapper{
+    .bg_decor{
+      display: none;
+    }
+
+    .about-us__wrapper-container{
+      padding: 0 4svw;
+      transition: 0.3s all;
+
+      h2{
+        margin-top: 5svh;
+        font-weight: 600;
+        font-size: 6svw;
+      }
+
+      .card-container{
+        display: grid;
+        grid-template-columns: repeat(2, 48%);
+        column-gap: 4%;
+
+        .card-container__item{
+          padding: 1.6svw 0;
+
+          .card-container__item-inner{
+            padding: 1svh 2svw;
+            row-gap: 2svw;
+
+            .inner-number{
+              font-weight: 600;
+              font-size: 6svh;
+              color: $secondary-font-color
+            }
+
+            p{
+              font-size: 2svw;
+            }
+          }
+        }
+      }
+      .about__arrow-down{
+        a{
+          font-size: 6svh;
+        }
+      }
+    }
+  }
+}
+
+
+@media (max-width: 750px) {
+  .about-us__wrapper{
+    .bg_decor{
+      display: none;
+    }
+
+    .about-us__wrapper-container{
+      padding: 0 10svw;
+      transition: 0.3s all;
+
+      h2{
+        margin-top: 5svh;
+        font-weight: 600;
+        font-size: 6svw;
+      }
+
+      .card-container{
+        display: grid;
+        grid-template-columns: repeat(1, 100%);
+        column-gap: 0;
+        row-gap: 2svh;
+
+        .card-container__item{
+          padding: 2svw 0;
+
+          .card-container__item-inner{
+            padding: 2svh 3svw;
+            row-gap: 2svw;
+            width: 100%;
+            flex-direction: row;
+            align-items: center;
+            column-gap: 3svw;
+
+            .inner-number{
+              font-weight: 600;
+              font-size: 6svh;
+              color: $secondary-font-color
+            }
+
+            p{
+              font-size: 3.5svw;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@media (max-width: 600px) {
+  .about-us__wrapper{
+    .bg_decor{
+      display: none;
+    }
+
+    .about-us__wrapper-container{
+      padding: 0 10svw;
+      transition: 0.3s all;
+
+      h2{
+        margin-top: 4svh;
+        font-weight: 600;
+        font-size: 10svw;
+      }
+
+      .card-container{
+        display: grid;
+        grid-template-columns: repeat(1, 100%);
+        column-gap: 0;
+        row-gap: 2svh;
+
+        .card-container__item{
+          padding: 2svw 0;
+
+          .card-container__item-inner{
+            padding: 2svh 3svw;
+            row-gap: 2svw;
+            width: 100%;
+            flex-direction: row;
+            align-items: center;
+            column-gap: 3svw;
+
+            .inner-number{
+              font-weight: 600;
+              font-size: 5svh;
+              color: $secondary-font-color
+            }
+
+            p{
+              font-size: 3.2svw;
+            }
+          }
+        }
+      }
+    }
+  }
+}

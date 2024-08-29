@@ -1,6 +1,7 @@
-import Header from "../../components/MainPageComponents/Header/Header.jsx";
-import './index.scss';
 import { useEffect, useRef, useState } from "react";
+import Header from "../../components/MainPageComponents/Header/Header.jsx";
+import About from "../../components/MainPageComponents/About/About.jsx";
+import './index.scss';
 
 const MainPage = () => {
     const sectionRefs = useRef([]);
@@ -19,12 +20,10 @@ const MainPage = () => {
     const handleScroll = (event) => {
         event.preventDefault();
         if (event.deltaY > 0) {
-            // Прокрутка вниз
             if (currentSection < sectionRefs.current.length - 1) {
                 scrollToSection(currentSection + 1);
             }
         } else {
-            // Прокрутка вверх
             if (currentSection > 0) {
                 scrollToSection(currentSection - 1);
             }
@@ -41,12 +40,7 @@ const MainPage = () => {
     return (
         <div className="main-page__wrapper">
             <Header ref={(el) => (sectionRefs.current[0] = el)}/>
-            <section id="about" ref={(el) => (sectionRefs.current[1] = el)} className="about_us">
-                section
-            </section>
-            <section id="section2" ref={(el) => (sectionRefs.current[2] = el)} className="about_us">
-                section
-            </section>
+            <About ref={(el) => (sectionRefs.current[1] = el)}/>
         </div>
     );
 };
